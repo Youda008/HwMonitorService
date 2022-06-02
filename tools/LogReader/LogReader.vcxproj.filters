@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CppUtils-Essential">
+      <UniqueIdentifier>{4ae8fa0b-e56e-4fec-b935-a2d9e96365d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CppUtils-Network">
+      <UniqueIdentifier>{49fd6232-e2c5-4697-9b8c-2a9e43f4d243}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LogReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\CppUtils-Network\HostInfo.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\CppUtils-Network\NetAddress.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\CppUtils-Network\Socket.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\CppUtils-Network\SystemErrorInfo.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\external\CppUtils-Essential\CriticalError.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\external\CppUtils-Network\HostInfo.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Network\NetAddress.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Network\Socket.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Network\SystemErrorInfo.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Essential\CriticalError.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Essential\Essential.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Essential\Span.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\external\CppUtils-Essential\TypeTraits.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

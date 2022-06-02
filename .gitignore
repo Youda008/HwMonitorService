@@ -1,0 +1,11 @@
+/build*
+Win32
+x64
+/deploy-package
+/messages/*.rc
+/messages/*.res
+/messages/*.bin
+/messages/*.h
+/messages/*.dll
+.vs
+*.vcxproj.user

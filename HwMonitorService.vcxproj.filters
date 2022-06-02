@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\MyService.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SvcCommon.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SvcMain.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Essential\ContainerUtils.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Essential\CriticalError.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Essential\LangUtils.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Essential\StreamUtils.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Essential\StringUtils.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Network\HostInfo.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Network\NetAddress.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Network\Socket.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Network\SystemErrorInfo.cpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClCompile>
+    <ClCompile Include="external\CppUtils-Essential\BinaryStream.cpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Config.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MyService.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SvcCommon.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\Assert.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\ContainerUtils.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\CriticalError.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\Essential.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\LangUtils.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\Safety.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\Span.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\StreamUtils.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\StringUtils.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Network\HostInfo.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Network\NetAddress.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Network\Socket.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Network\SystemErrorInfo.hpp">
+      <Filter>CppUtils-Network</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\BinaryStream.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\Endianity.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\MathUtils.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="external\CppUtils-Essential\TypeTraits.hpp">
+      <Filter>CppUtils-Essential</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Protocol.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Config.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{270e82c2-1d2e-45ef-b64a-d5e4c2ef35f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CppUtils-Essential">
+      <UniqueIdentifier>{32c939fe-e411-49bd-b521-4f02a061aa67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CppUtils-Network">
+      <UniqueIdentifier>{f591b76f-bc9f-42e7-9308-29d90a43bae1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="external\CppUtils-Essential\README.md">
+      <Filter>CppUtils-Essential</Filter>
+    </None>
+  </ItemGroup>
+</Project>
