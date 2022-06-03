@@ -1,7 +1,8 @@
-/build*
+build*
 Win32
 x64
-/deploy-package
+/deploy-package/*.exe
+/deploy-package/*.dll
 /messages/*.rc
 /messages/*.res
 /messages/*.bin
@@ -9,3 +10,4 @@ x64
 /messages/*.dll
 .vs
 *.vcxproj.user
+*.pro*

@@ -18,10 +18,10 @@
 
 //----------------------------------------------------------------------------------------------------------------------
 
-enum ResponseCode : uint32_t
+enum class ResponseCode : uint32_t
 {
 	Success = 0,           ///< the float value from the sensor follows
-	InvalidRequest = 1,    ///< the network request is invalid
+	InvalidRequest = 1,    ///< the network request has invalid format
 	SensorNotFound,        ///< such sensor was not found
 	SensorNotMonitored,    ///< sensor is available but not monitored
 	SensorFailed,          ///< sensor is available and monitored, but reading its value has failed
