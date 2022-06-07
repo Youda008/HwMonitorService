@@ -3,6 +3,7 @@ Win32
 x64
 /deploy-package/*.exe
 /deploy-package/*.dll
+/releases/*
 /messages/*.rc
 /messages/*.res
 /messages/*.bin

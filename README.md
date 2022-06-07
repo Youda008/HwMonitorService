@@ -88,6 +88,9 @@ If you change the `log_port` in [settings.txt](deploy-package/settings.txt), the
 If nothing is showing at all, alternative is to right-click on This Computer and select Manage. Then go to Event Viewer -> Windows Logs -> Application.
 HwMonitorService should have its own entries there explaining what went wrong.
 
+You can also run `HwMonitorProcess.exe` directly (by double-clicking) instead of starting `HwMonitorService.exe` via Services in Task Manager.
+It does the same thing except it runs in the foreground and logs everything to the terminal.
+
 
 ## How to build
 
