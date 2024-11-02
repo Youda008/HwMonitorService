@@ -5,26 +5,27 @@
 // Description: simple network client for the HwMonitorService
 //======================================================================================================================
 
-#include "HwMonitorClient.hpp"
+#include <HwMonitorClient.hpp>
+#include <CppUtils-Essential/Essential.hpp>
 
-#include "Essential.hpp"
+#include "../../../src/Protocol.hpp"
 
-#include "Protocol.hpp"
-#include "BinaryStream.hpp"
-using own::BinaryOutputStream;
-using own::BinaryInputStream;
-#include "Socket.hpp"
+#include <CppUtils-Network/Socket.hpp>
 using own::TcpSocket;
 using own::SocketError;
-#include "SystemErrorInfo.hpp"
+#include <CppUtils-Network/SystemErrorInfo.hpp>
 using own::getLastError;
 using own::getErrorString;
-#include "LangUtils.hpp"
-using fut::make_unique;
-#include "ContainerUtils.hpp"
+
+#include <CppUtils-Essential/BinaryStream.hpp>
+using own::BinaryOutputStream;
+using own::BinaryInputStream;
+#include <CppUtils-Essential/ContainerUtils.hpp>
 using own::span;
 using own::make_span;
-#include "CriticalError.hpp"
+#include <CppUtils-Essential/LangUtils.hpp>
+using fut::make_unique;
+#include <CppUtils-Essential/CriticalError.hpp>
 
 #include <string>
 using std::string;

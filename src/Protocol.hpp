@@ -9,7 +9,7 @@
 #define PROTOCOL_INCLUDED
 
 
-#include "BinaryStream.hpp"
+#include <CppUtils-Essential/BinaryStream.hpp>
 
 #include <cstdint>
 #include <cstring>
@@ -79,8 +79,8 @@ struct SensorResponse
 
 	friend void operator>>( own::BinaryInputStream & stream, SensorResponse & r )
 	{
-		stream.readBigEndian( r.code );
-		if (r.code == ResponseCode::Success)
+		bool read = stream.readBigEndian( r.code );
+		if (read && r.code == ResponseCode::Success)
 			stream.readRaw( r.value );
 	}
 };

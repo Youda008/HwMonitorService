@@ -13,8 +13,8 @@
 #include "Protocol.hpp"
 #include "Config.hpp"
 
-#include "Socket.hpp"
-#include "StringUtils.hpp"  // to_string
+#include <CppUtils-Network/Socket.hpp>
+#include <CppUtils-Essential/StringUtils.hpp>  // to_string
 using namespace own;
 
 #include "lhwm-cpp-wrapper.h"
@@ -200,7 +200,7 @@ bool MyServiceInit()
 		reportEventAndLog( SVCEVENT_CUSTOM_ERROR, Severity::Error, _T("User is not admin") );
 		//return false;
 	}
-	
+
 	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 4000 );
 
 	// read information about available sensors from the hardware monitoring library
@@ -284,7 +284,7 @@ void MyServiceRun()
 
 			sensorData.value.store( value );
 		}
-		
+
 		// If the SvcCtrlHandler signals to stop the service, wake up and exit immediatelly.
 		// If there is no signal, wait 2 seconds and repeat.
 		waitResult = WaitForSingleObject( g_svcStopEvent, g_config.refreshInterval_ms );
@@ -310,7 +310,7 @@ static void TcpServerLoop()
 	unordered_set< ASocket * > activeSockets;
 	// Keep this declared here to prevent unnecessary allocation and deallocation at every iteration.
 	std::vector< ASocket * > readySockets;
-		
+
 	const size_t maxActiveSockets = size_t( g_config.maxConnectedClients ) + 1;
 	activeSockets.insert( &g_serverSocket );
 
@@ -352,7 +352,7 @@ static void TcpServerLoop()
 			else if (TcpSocket * clientSocket = dynamic_cast< TcpSocket * >( socket ))
 			{
 				Connection decision = serveClient( *clientSocket );
-			
+
 				if (decision == Connection::Close)
 				{
 					activeSockets.erase( clientSocket );
@@ -399,7 +399,7 @@ static Connection serveClient( TcpSocket & clientSocket )
 		// Either the client disconnected or it's an error.
 		return Connection::Close;
 	}
-		
+
 	SensorRequest request;
 	if (!fromBytes( requestData, request ))
 	{
@@ -422,7 +422,7 @@ static Connection serveClient( TcpSocket & clientSocket )
 		clientSocket.send( toByteVector( SensorResponse( ResponseCode::SensorNotMonitored ) ) );
 		return Connection::Keep;
 	}
-	
+
 	float value = sensorDataIter->second.value.load();
 
 	if (value <= 0.0f) // the other thread failed to retrieve temperature
