@@ -47,7 +47,7 @@ To read the sensor value you need to:
    The first 4 bytes are ASCII encoded characters "SENS".
    Then there is a null-terminated string of sensor ID - the one you entered in [settings.txt](deploy-package/settings.txt).
 
-3. wait for a response that will have one of the two formats depending on status code
+3. wait for a response that will have one of the two formats depending on status code<br>
    format in case status code = 0
 ```
    +-----------------+-----------------+
@@ -101,6 +101,8 @@ First you need to initialize all submodules.
 git submodule update --init
 ```
 
+Then run "messages\CompileMessages.bat" to generate the Windows event log structures.
+
 Then, either you need to open "external\lhwm-wrapper\lhwm-wrapper\lhwm-wrapper.csproj" and change the output file name from "LhwmBindingsLib.dll" to "lhwm-wrapper.dll",
 or open "external\lhwm-wrapper\lhwm-cpp-wrapper\lhwm-cpp-wrapper\lhwm-cpp-wrapper.cpp" and change the `#using "lhwm-wrapper.dll"` to `#using "LhwmBindingsLib.dll"`.
 
@@ -110,4 +112,4 @@ And finally, output directories of both the "lhwm-wrapper.csproj" and "lhwm-cpp-
 
 Some other manual fixes may be needed if the author of [lhwm-wrapper](https://gitlab.com/OpenRGBDevelopers/lhwm-wrapper/) decides to change his build system.
 
-When everytime is setup to link with other components correctly, you should be able to just open "HwMonitorService.sln" in Visual Studio and build everything.
+When everything is setup to link with other components correctly, you should be able to just open "HwMonitorService.sln" in Visual Studio and build everything.

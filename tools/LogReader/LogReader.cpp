@@ -1,4 +1,4 @@
-#include "Socket.hpp"
+#include <CppUtils-Network/Socket.hpp>
 using namespace own;
 
 #include <cstdint>
@@ -27,7 +27,7 @@ int main( int argc, char * argv [] )
 		printf( "Failed to open logging socket: %s (error code: %d)\n", enumString( res ), int( logSocket.getLastSystemError() ) ); fflush( stdout );
 		return 2;
 	}
-	
+
 	std::string appTag;
 	if (argc > 2)
 	{
