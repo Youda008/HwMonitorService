@@ -151,11 +151,14 @@ void reportEventAndLog( DWORD eventID, Severity severity, const TCHAR * format, 
 
 static void populateSensorDataMap( const SensorMap & sensorMap, unordered_map< string, SensorData > & sensorData )
 {
-	for (const auto & sensorKV : sensorMap)
+	for (const auto & [deviceID, sensors] : sensorMap)
 	{
-		for (const auto& row : sensorKV.second)
+		for (const auto & sensor : sensors)
 		{
-			sensorData.emplace( std::get<2>(row), SensorState::FoundButNotMonitored );
+			// std::get<0>(sensor) - sensor display name
+			// std::get<1>(sensor) - sensor category
+			// std::get<2>(sensor) - sensor ID
+			sensorData.emplace( std::get<2>(sensor), SensorState::FoundButNotMonitored );
 		}
 	}
 }
@@ -168,6 +171,8 @@ static void TcpServerLoop();
 
 bool MyServiceInit()
 {
+	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 500 );
+
 	// read configuration from a file
 	string loadingError = readConfig( defaultConfigFileName, g_config );
 	if (!loadingError.empty())
@@ -176,7 +181,7 @@ bool MyServiceInit()
 		return false;
 	}
 
-	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 1000 );
+	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 100 );
 
 	// open logging socket
 	if (g_config.logToUDPSocket)
@@ -197,11 +202,11 @@ bool MyServiceInit()
 	// reading the hardware sensors requires admin privileges
 	if (!IsUserAnAdmin())
 	{
-		reportEventAndLog( SVCEVENT_CUSTOM_ERROR, Severity::Error, _T("User is not admin") );
+		reportEventAndLog( SVCEVENT_CUSTOM_ERROR, Severity::Error, _T("User is not admin, sensors might be unavailable") );
 		//return false;
 	}
 
-	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 4000 );
+	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 8000 );
 
 	// read information about available sensors from the hardware monitoring library
 	auto sensorInfo = LHWM::GetHardwareSensorMap();
@@ -227,7 +232,8 @@ bool MyServiceInit()
 		}
 	}
 
-	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 1000 );
+	log( Severity::Debug, _T("Found %zu devices with sensors:\n"), sensorInfo.size() );
+	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 100 );
 
 	// Create an event. The control handler function (SvcCtrlHandler)
 	// signals this event when it receives the stop control code.

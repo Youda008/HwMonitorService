@@ -54,8 +54,9 @@ void WINAPI SvcMain( DWORD dwArgc, LPTSTR *lpszArgv )
 	signal( SIGINT, signalHandler );
 #endif
 
-	// Report initial status to the SCM
-	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 3000 );
+	// Report initial status to the SCM.
+	// Within this number of milliseconds MyServiceInit() should report next status.
+	ReportSvcStatus( SERVICE_START_PENDING, NO_ERROR, 1000 );
 	ReportSvcEvent( SVCEVENT_STATUS_REPORT, _T("Initializing service") );
 
 	// Perform service-specific initialization.
