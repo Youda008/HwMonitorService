@@ -25,27 +25,27 @@ void ReportSvcStatus( DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitH
 #ifndef DEBUGGING_PROCESS
 	static DWORD dwCheckPoint = 1;
 
-	SERVICE_STATUS g_svcStatus;
+	SERVICE_STATUS svcStatus;
 
-	g_svcStatus.dwServiceType = SERVICE_WIN32_OWN_PROCESS;
-	g_svcStatus.dwServiceSpecificExitCode = 0;
+	svcStatus.dwServiceType = SERVICE_WIN32_OWN_PROCESS;
+	svcStatus.dwServiceSpecificExitCode = 0;
 
-	g_svcStatus.dwCurrentState = dwCurrentState;
-	g_svcStatus.dwWin32ExitCode = dwWin32ExitCode;
-	g_svcStatus.dwWaitHint = dwWaitHint;
+	svcStatus.dwCurrentState = dwCurrentState;
+	svcStatus.dwWin32ExitCode = dwWin32ExitCode;
+	svcStatus.dwWaitHint = dwWaitHint;
 
 	if (dwCurrentState == SERVICE_START_PENDING)
-		g_svcStatus.dwControlsAccepted = 0;
+		svcStatus.dwControlsAccepted = 0;
 	else
-		g_svcStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP;
+		svcStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP;
 
 	if (dwCurrentState == SERVICE_RUNNING || dwCurrentState == SERVICE_STOPPED)
-		g_svcStatus.dwCheckPoint = 0;
+		svcStatus.dwCheckPoint = 0;
 	else
-		g_svcStatus.dwCheckPoint = dwCheckPoint++;
+		svcStatus.dwCheckPoint = dwCheckPoint++;
 
 	// Report the status of the service to the SCM
-	SetServiceStatus( g_svcStatusHandle, &g_svcStatus );
+	SetServiceStatus( g_svcStatusHandle, &svcStatus );
 #endif
 }
 
